@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Spencer Smith - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --text-color: #1a1a1a;
+            --card-bg-color: rgba(255, 255, 255, 0.6);
+            --primary-color: #007bff;
+            --heading-color: #1a1a1a;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --table-header-bg: rgba(0, 0, 0, 0.03);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f2f5;
+            --card-bg-color: rgba(30, 30, 30, 0.6);
+            --primary-color: #36a3ff;
+            --heading-color: #f0f2f5;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --table-header-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: var(--card-bg-color);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 var(--shadow-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            font-weight: 700;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 3em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            font-size: 1.75em;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        
+        [data-theme="dark"] .contact-info a:hover {
+            color: #6ec1ff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: none;
+        }
+
+        th, td {
+            padding: 15px;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            font-weight: 600;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        hr {
+            display: none; /* Replaced with spacing and section borders */
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Justin S. Smith</h1>
+            <div class="contact-info">
+                <a href="mailto:dbkrsmith@gmail.com">dbkrsmith@gmail.com</a> |
+                <a href="tel:313-306-3767">313-306-3767</a> |
+                <a href="https://www.linkedin.com/company/automatedtechnologies" target="_blank">LinkedIn</a> |
+                <a href="https://www.github.com/smit4786" target="_blank">GitHub</a>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Hands-on cross-functional problem solver specialized in global information technology project management. A subject matter expert in Automation, Endpoint Engineering, Networking, Desktop Support, and Cybersecurity. Experienced in regulated industries and proficient in asset management during mergers, acquisitions, and divestitures. Entrepreneurial; get things done attitude.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div>
+                <h3>Bank of America (Contractor), Remote — Platform Migration Developer</h3>
+                <p><em>August 2021 - January 2022</em></p>
+                <ul>
+                    <li>Developed MacOS Management Best Practices including the design and implementation of a resilient hybrid-cloud mobile device management server infrastructure allowing devices to be managed by multiple MDMs simultaneously.</li>
+                    <li>Advised security and risk teams on best practices for role-based access controls, single sign on, Multi-Factor Authentication, and other security initiatives.</li>
+                    <li>Developed automated auditing reporting infrastructure providing real-time device telemetry on and off corporate networks.</li>
+                    <li>Trained a team of engineers on MacOS Systems administration while participating in incident management queues to determine pain points, maximize results, and eliminate technical debt.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>JP Morgan Chase, Jersey City, NJ — Vice President/Lead Engineer</h3>
+                <p><em>February 2018 – December 2020</em></p>
+                <ul>
+                    <li>Developed an Infrastructure-as-Code model, allowing the entire MDM server infrastructure to be automatically reprovisioned in the event of a disaster recovery event.</li>
+                    <li>Led an endpoint engineering team including daily incident management with Service Level Agreement (SLA) of one hour contact and twenty-four hour resolution tracked with ServiceNow. Developed the Mac as Choice program allowing anyone in a highly secure environment to use MacOS as their primary operating system.</li>
+                    <li>Authored Standard Operating Procedures and served as the 24/7 escalation point for global support teams including VPN and Application Support. Implemented biometrics, Multi-Factor Authentication(MFA), Center for Internet Security (CIS) benchmarks, "Zero Touch" deployment, and DLP tools e.g. Symantec, Crowdstrike, and Tanium.</li>
+                    <li>Led Change Management and IT Service Management procedures for global infrastructure including Change Advisory Board participation and project tracking using Jira. Provided application packaging support and advanced malware/threat detection.</li>
+                    <li>Owned vendor relationships, set hardware standards, performed risk assessments and maintained telemetry on thousands of managed devices globally.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Moody's Corporation (Contractor), Manhattan, NY — Consulting Engineer</h3>
+                <p><em>July 2017 - January 2018</em></p>
+                <ul>
+                    <li>Completed on premises Windows Server 2016 private cloud infrastructure for Mobile Device Management including IIS, all Policies, Smart Groups, Access Control Lists, and other core functionality.</li>
+                    <li>Trained senior engineers on MacOS management and best practices.</li>
+                    <li>Advised Chief Information Security Officer (CISO) on strategy for anti-virus, cloud proxy, and Center for Information Security standards including building an automated and reusable implementation and remediation program in Bash.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Fair Isaac Corporation (FICO), Minneapolis, MN — Lead Engineer</h3>
+                <p><em>June 2016 - June 2017</em></p>
+                <ul>
+                    <li>Managed an offshore team of contractors and owned MacOS service globally - including Vendor Management and setting Hardware Standards.</li>
+                    <li>Owned DevOps practices and implemented Okta integration for endpoints and backend infrastructure leveraging tools e.g. Puppet, Chef, Terraform, Kubernetes, etc. and administering a RHEL server environment.</li>
+                    <li>Developed Skills in automation to implement CI/CD pipeline using Python, Bash, SQL, and YAML.</li>
+                    <li>Completed RSA hard token to soft token transition significantly reducing costs.</li>
+                    <li>Developed API-based reporting infrastructure and maintained hardware encryption, antivirus, and certificates (PKI) on all devices with 99% compliance reported in real time.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Thermo Fisher (Contractor), Pittsburgh, PA — Consulting Engineer</h3>
+                <p><em>January 2016 – June 2016</em></p>
+                <ul>
+                    <li>Built a custom client-side application to simultaneously update Active Directory domain membership and Mobile Device Management profiles for devices acquired during a corporate merger.</li>
+                    <li>Trained senior engineers on MacOS management best practices.</li>
+                    <li>Produced and presented documentation including strategic roadmaps to C-level Executives and governance.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Merrill (Datasite), Saint Paul, MN — Lead Helpdesk Engineer</h3>
+                <p><em>June 2014 - July 2015</em></p>
+                <ul>
+                    <li>Implemented network based imaging using Deploy Studio to significantly reduce deployment and re-imaging times.</li>
+                    <li>Managed VMware Vsphere environment.</li>
+                    <li>Responsible for daily incident management of tier 3 and tier 4 support issues using Axios Assyst.</li>
+                    <li>Advanced issue troubleshooting and diagnostics using tools e.g. Splunk.</li>
+                    <li>Developed and trained staff to support OS X and iOS devices.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Minneapolis Public Schools, Minneapolis, MN — Systems/Network Engineer</h3>
+                <p><em>June 2013 - June 2014</em></p>
+                <ul>
+                    <li>Administered over 70 Multiprotocol Label Switching (MPLS) networked buildings and over 200 distributed servers.</li>
+                    <li>Configured on premises, load-balanced (F5 Big IP) multi-server Jamf Pro environment.</li>
+                    <li>Maintained Windows Enterprise Administrator Access.</li>
+                    <li>Led the creation and roll out of a One to One iPad program for the entire district.</li>
+                    <li>Supported Vbrick and Tightrope Carousel multimedia infrastructure.</li>
+                    <li>Maintained Red Hat Enterprise Linux (RHEL), OS X 10.4 Server, and Windows Server 2003.</li>
+                    <li>Used Norton Ghost and Microsoft System Center Configuration Manager (SCCM) for the setup and imaging of new laptop and desktop computers.</li>
+                    <li>Transitioned from Microsoft Exchange to Google Workspace and used Active Directory for Identity and Access Management (IAM).</li>
+                    <li>Built and maintained enterprise infrastructure monitoring solutions including Splunk and Nagios.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>High School For Recording Arts (Contractor), Saint Paul, MN — Systems Administrator</h3>
+                <p><em>January 2011 – June 2013</em></p>
+                <ul>
+                    <li>Led the comprehensive overhaul of the entire internal IT infrastructure - including the migration of critical Ruby on Rails applications to cloud hosting.</li>
+                    <li>Managed the department budget.</li>
+                    <li>Maintained file services and LDAP.</li>
+                    <li>Developed and managed vendor relationships and Requests for Proposal.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Apple, Roseville, MN — Family Room Specialist</h3>
+                <p><em>June 2010 - January 2011</em></p>
+                <ul>
+                    <li>Delivered exemplary Genius Bar support for iPads, iPods, and iPhones included screen and battery replacements.</li>
+                    <li>Delivered One to One personal training sessions on various topics including OS X, iWork, and iLife software suites.</li>
+                    <li>Completed cross-platform and Mac to Mac data transfers.</li>
+                    <li>Recognized for exceeding sales goals as part of the iPhone 4 launch team.</li>
+                    <li>Tasked to ensure all customers have a positive and seamless Apple Retail experience.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>University of Minnesota, Minneapolis, MN — Usability Assistant, Help Desk Administrator, Systems Administrator, Lab Attendant</h3>
+                <p><em>August 2008 – January 2011</em></p>
+                <ul>
+                    <li>Assisted with the recruitment and scheduling for web usability and accessibility evaluations and operated advanced film and eye-tracking technology.</li>
+                    <li>Developed and integrated a mail-merge workflow which significantly improved efficiency and turnaround time for participant recruitment.</li>
+                    <li>Used Microsoft System Center Configuration Manager (SCCM) for the setup and imaging of new department laptop and desktop computers.</li>
+                    <li>Used Active Directory for user permissions adjustments.</li>
+                    <li>Performed maintenance (hardware/software) of current computer systems, and troubleshooting of university hosted email and networking services.</li>
+                    <li>Maintained automation infrastructure for OS X endpoints as well as network access controls for university intranet.</li>
+                    <li>Maintained the department's Red Hat Enterprise Linux (RHEL) 4 and Microsoft Windows 2003 production servers.</li>
+                    <li>Managed electronic reservation systems for photographic and video equipment, which included performing the necessary steps to prepare the equipment for student use.</li>
+                    <li>Provided support for student computers, software (Avid Media Composer, Dreamweaver, Final Cut Pro, Photoshop, etc.), video and audio equipment, and performed maintenance and troubleshooting of laser printers.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>WLTV, Walled Lake, MI — Broadcast Engineering Student</h3>
+                <p><em>June 2006 - June 2008</em></p>
+                <ul>
+                    <li>Studied television production including Directing, Audio Engineering, Camera Operation, Editing, Lighting, etc.</li>
+                    <li>Used Avid Media Composer to produce video projects.</li>
+                    <li>Participated in live and simulated local broadcast productions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education-certifications">
+            <h2>Education and Certifications</h2>
+            <ul>
+                <li><strong>University of Minnesota:</strong> Bachelor of Arts: German Studies, Political Science</li>
+                <li><strong>Cisco:</strong> Cisco Certified Network Administrator</li>
+                <li><strong>Apple:</strong> Apple Certified Support Professional, Apple Certified Technical Coordinator</li>
+                <li><strong>Jamf:</strong> Casper Certified Administrator, Casper Mobile Administrator, Casper Certified Expert, Jamf Pro 400</li>
+                <li><strong>National Security Agency (NSA):</strong> Top Secret + SCI Security Clearance</li>
+                <li><strong>University of Michigan:</strong> Successful Negotiation (2024), Leading Teams (2024), How to Create a Good Business (2024), Python Data Structures (2024)</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Operating Systems</strong></td>
+                        <td>MacOS, iOS, ChromeOS, Microsoft Windows, RHEL, Ubuntu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programming</strong></td>
+                        <td>Bash, Python, Powershell, SQL, Applescript, JavaScript</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Software</strong></td>
+                        <td>Jamf Pro, Visual Studio Code, ServiceNow, Splunk, Little Snitch, xCode, VMware Airwatch, Intune, Jira, Git, Docker</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Networking</strong></td>
+                        <td>MPLS, VPN, Cisco Networking, Wireshark</td>
+                    </tr>
+                     <tr>
+                        <td><strong>Other Skills</strong></td>
+                        <td>ITSM, Project Management, Accessibility Design</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div>
+                <h3>Jamf Persistent Policies with Patch Management</h3>
+                <p>Multi-policy Jamf Pro design implementation utilizing smart groups, API calls, and scripting to implement automated and consistent application and services deployment policies to create modular, resilient, and visually excellent management environments.</p>
+            </div>
+            <div>
+                <h3>Automated Center for Information Security Implementation and Remediation</h3>
+                <p>Created programmatic risk controls, wrote firewall rules, developed proofs of concept and minimum viable products, and enabled the use of MacOS devices in a highly secure corporate environment. Authored corporate communications and gathered user survey data to augment continuous improvement and integration objectives.</p>
+            </div>
+            <div>
+                <h3>byDesign</h3>
+                <p>"Stealth Startup” marketing agency focussed on impactful and powerful campaigns. We specialize in an intelligent and analytical approach to both minimize wasted advertising spend (estimated at 50% generally) – and maximize impact. We build purposefully, by Design.</p>
+            </div>
+            <div>
+                <h3>LiChess "Speed Run"</h3>
+                <p>Personal challenge to achieve a 2000+ bullet chess rating in fewer than 48 hours of playtime.</p>
+            </div>
+            <div>
+                <h3>Leetcode Training</h3>
+                <p>Studying software engineering problem sets on Leetcode.</p>
+            </div>
+            <div>
+                <h3>R.A.T.E.D.</h3>
+                <p>A dynamic rating system for evaluating proficiency.</p>
+            </div>
+            <div>
+                <h3>Hyperpolyglot</h3>
+                <p>Duolingo challenge to complete 20+ courses including (Russian, Arabic, Spanish, Japanese, Ukrainian, German, Chinese, French, Korean, Portuguese, Italian, Greek, Vietnamese, Polish, Hebrew, Dutch, Hindi, English, Swedish, Hungarian, Danish, Music, and Math)</p>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li><strong>English:</strong> Native</li>
+                <li><strong>German:</strong> Fluent</li>
+                <li><strong>Spanish:</strong> Fluent</li>
+                <li><strong>French:</strong> Conversational</li>
+                <li><strong>Italian:</strong> Conversational</li>
+                <li><strong>Russian:</strong> Beginner</li>
+                <li><strong>Portuguese:</strong> Beginner</li>
+            </ul>
+        </section>
+        
+        <section id="volunteer">
+            <h2>Volunteer Work</h2>
+            <ul>
+                <li><strong>Mentor (2020 - Present):</strong> Guides aspiring developers in Python.</li>
+                <li><strong>IT Consultant, Nonprofit Organizations (2016 - Present):</strong> Provides technical support, training, and infrastructure setup for small nonprofits.</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h2>Hobbies and Interests</h2>
+            <ul>
+                <li>Open-source contributions on GitHub (e.g., Python libraries for automation).</li>
+                <li>Designing accessible web applications for non-profits.</li>
+                <li>Exploring advancements in cloud computing and AI technologies.</li>
+            </ul>
+        </section>
+        
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>
+                <em>"Ist Literatur gefährlich?"</em> ("Is Literature Dangerous?") - LinkedIn Post | 2024 | 
+                <a href="https://www.linkedin.com/posts/smit4786_ist-literatur-gef%C3%A4hrlich-activity-7304288404219789312-JgxO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAlpEIEBABDoVzTUGmuq7YHjrVDFdNPVySw" target="_blank">Read Post</a>
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        
+            if (currentTheme === 'dark') {
+                themeToggle.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }    
+        }
+
+        themeToggle.addEventListener('change', switchTheme, false);
+    </script>
+
+</body>
+</html>
